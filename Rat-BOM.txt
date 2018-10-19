@@ -1,0 +1,40 @@
+Partlist exported from /Users/evanhowell/git/Rat/Rat.sch at 10/18/18 6:22 PM
+
+Part   Value     Device       Package     Description          
+C1     22nF      072X0252     072X025     1000pF - 0.47uF      
+C2     1nF       072X0252     072X025     1000pF - 0.47uF      
+C3     30pF      050X030_0251 050X030_025 47 - 120pF           
+C4     100pF     050X030_0251 050X030_025 47 - 120pF           
+C5     2.2uF     0501         050_020_1   0.22 - 100uF         
+C6     4.7uF     0501         050_020_1   0.22 - 100uF         
+C7     4.7uF     0501         050_020_1   0.22 - 100uF         
+C8     3n3       072X0252     072X025     1000pF - 0.47uF      
+C9     22nF      072X0252     072X025     1000pF - 0.47uF      
+C10    1uF       0501         050_020_1   0.22 - 100uF         
+C11    100uF     0801         080_035_1   47 - 470uF           
+C12    100nF     072X0252     072X025     1000pF - 0.47uF      
+C13    1uF       0501         050_020_1   0.22 - 100uF         
+D1     1N914     1N914.3      DO35-3      Fast Switching Diode 
+D2     1N914     1N914.3      DO35-3      Fast Switching Diode 
+D3     4002      1N400X.3     DO41-3      Rectifier Diodes     
+D4     LED3MM    LED3MM       LED3MM                           
+DIST   A100k     POT16MM      16MM        Potentiometers       
+FILTER A100K     POT16MM      16MM        Potentiometers       
+IC1    LM308N    LM308N       DIL08       OP AMP               
+Q1A    2N5458    2N5458       TO92-       N-CHANNEL JFET       
+Q1B    MMBF5458  MMBF5458     SOT23       SMD 5458             
+R1     2M2       6MM.3        R0207/3     6mm Resistors        
+R2     2M2       6MM.3        R0207/3     6mm Resistors        
+R3     1k        6MM.3        R0207/3     6mm Resistors        
+R4     47R       6MM.3        R0207/3     6mm Resistors        
+R5     560R      6MM.3        R0207/3     6mm Resistors        
+R6     1k        6MM.3        R0207/3     6mm Resistors        
+R7     1k5       6MM.3        R0207/3     6mm Resistors        
+R8     1M        6MM.3        R0207/3     6mm Resistors        
+R9     10k       6MM.3        R0207/3     6mm Resistors        
+R10    47R       6MM.3        R0207/3     6mm Resistors        
+R11    100k      6MM.3        R0207/3     6mm Resistors        
+R12    4k7       6MM.3        R0207/3     6mm Resistors        
+R13    100k      6MM.3        R0207/3     6mm Resistors        
+U$1    BOARDLINK BOARDLINK    BOARDLINK                        
+VOL    A100k     POT16MM      16MM        Potentiometers       
