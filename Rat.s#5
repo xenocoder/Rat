@@ -84,12 +84,6 @@
 &lt;li&gt;these are used on a schematic for placeholders and on a board for pads for off-board components like jacks.
 &lt;/ul&gt;</description>
 <packages>
-<package name="SQUARE">
-<description>&lt;b&gt;Square Pad&lt;/b&gt;
-&lt;ul&gt;&lt;li&gt;drill diameter 1 mm&lt;/li&gt;&lt;/ul&gt;</description>
-<pad name="1" x="0" y="0" drill="1" diameter="2" shape="square"/>
-<text x="1.27" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
-</package>
 </packages>
 <symbols>
 <symbol name="+09V-1">
@@ -115,27 +109,6 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="GND(T)" prefix="GND">
-<description>&lt;b&gt;Ground&lt;/b&gt;
-&lt;ul&gt;
-&lt;li&gt;use this to hook up ground (GND) throughout a schematic instead of running wire&lt;/li&gt;
-&lt;li&gt;automatically labels the net "GND"&lt;/li&gt;
-&lt;li&gt;adds a hookup pad to the circuit board (you can use several)&lt;/li&gt;
-&lt;/ul&gt;</description>
-<gates>
-<gate name="GND" symbol="GND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SQUARE">
-<connects>
-<connect gate="GND" pin="GND" pad="1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="VB" prefix="VB">
 <description>&lt;b&gt;Vb (Voltage Reference)&lt;/b&gt;
 &lt;ul&gt;
@@ -2330,12 +2303,11 @@ grid 2.54 mm</description>
 </class>
 </classes>
 <parts>
-<part name="GND3" library="mb_supply" deviceset="GND(T)" device=""/>
 <part name="VB1" library="mb_supply" deviceset="VB" device=""/>
 <part name="VB2" library="mb_supply" deviceset="VB" device=""/>
-<part name="DIST" library="mb_pots" deviceset="POT" device="16MM_PCB_PADS" value="A100k"/>
-<part name="FILTER" library="mb_pots" deviceset="POT" device="16MM_PCB_PADS" value="A100K"/>
-<part name="VOL" library="mb_pots" deviceset="POT" device="16MM_PCB_PADS" value="A100k"/>
+<part name="DIST" library="mb_pots" deviceset="POT" device="16MM" value="A100k"/>
+<part name="FILTER" library="mb_pots" deviceset="POT" device="16MM" value="A100K"/>
+<part name="VOL" library="mb_pots" deviceset="POT" device="16MM" value="A100k"/>
 <part name="R1" library="mb_resistors" deviceset="6MM" device=".3" value="2M2"/>
 <part name="R2" library="mb_resistors" deviceset="6MM" device=".3" value="2M2"/>
 <part name="R3" library="mb_resistors" deviceset="6MM" device=".3" value="1k"/>
@@ -2389,6 +2361,7 @@ grid 2.54 mm</description>
 <part name="GND2" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND4" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND10" library="mb_supply" deviceset="GND" device=""/>
+<part name="GND3" library="mb_supply" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2396,7 +2369,6 @@ grid 2.54 mm</description>
 <text x="263.144" y="6.604" size="3.81" layer="94">1.0</text>
 </plain>
 <instances>
-<instance part="GND3" gate="GND" x="101.6" y="116.84" rot="R180"/>
 <instance part="VB1" gate="G$1" x="71.12" y="116.84"/>
 <instance part="VB2" gate="G$1" x="180.34" y="147.32"/>
 <instance part="DIST" gate="G$1" x="101.6" y="142.24" rot="R90"/>
@@ -2459,6 +2431,7 @@ grid 2.54 mm</description>
 <instance part="GND2" gate="GND" x="149.86" y="76.2"/>
 <instance part="GND4" gate="GND" x="198.12" y="76.2"/>
 <instance part="GND10" gate="GND" x="220.98" y="76.2"/>
+<instance part="GND3" gate="GND" x="101.6" y="116.84" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -2473,11 +2446,6 @@ grid 2.54 mm</description>
 <wire x1="53.34" y1="132.08" x2="53.34" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="139.7" x2="60.96" y2="139.7" width="0.1524" layer="91"/>
 <junction x="53.34" y="132.08"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="A" pin="V-"/>
-<pinref part="GND3" gate="GND" pin="GND"/>
-<wire x1="101.6" y1="106.68" x2="101.6" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C2" gate="G$1" pin="2"/>
@@ -2549,6 +2517,11 @@ grid 2.54 mm</description>
 <pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="220.98" y1="83.82" x2="220.98" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="GND10" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="A" pin="V-"/>
+<wire x1="101.6" y1="106.68" x2="101.6" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="N$1" class="0">

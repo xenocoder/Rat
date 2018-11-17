@@ -8,8 +8,8 @@
 </settings>
 <grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
@@ -599,42 +599,116 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </pass>
 </autorouter>
 <elements>
-<element name="C1" library="mb_caps-box" package="072X025" value="22nF" x="7.62" y="27.94" rot="R90"/>
-<element name="C10" library="mb_caps-electro" package="050_020_1" value="1uF" x="41.275" y="34.29" rot="R90"/>
-<element name="C11" library="mb_caps-electro" package="080_035_1" value="100uF" x="5.715" y="18.415" rot="R180"/>
-<element name="C12" library="mb_caps-box" package="072X025" value="100nF" x="3.81" y="27.94" rot="R90"/>
-<element name="C13" library="mb_caps-electro" package="050_020_1" value="1uF" x="6.35" y="34.925" rot="R180"/>
-<element name="C2" library="mb_caps-box" package="072X025" value="1nF" x="19.05" y="27.94" rot="R90"/>
-<element name="C3" library="mb_caps-ceramic" package="050X030_025" value="30pF" x="15.24" y="12.7" rot="R270"/>
-<element name="C4" library="mb_caps-ceramic" package="050X030_025" value="100pF" x="25.4" y="19.685"/>
-<element name="C5" library="mb_caps-electro" package="050_020_1" value="2.2uF" x="46.99" y="26.67" rot="R270"/>
-<element name="C6" library="mb_caps-electro" package="050_020_1" value="4.7uF" x="46.99" y="19.685" rot="R90"/>
-<element name="C7" library="mb_caps-electro" package="050_020_1" value="4.7uF" x="46.99" y="34.29" rot="R270"/>
-<element name="C8" library="mb_caps-box" package="072X025" value="3n3" x="11.43" y="27.94" rot="R270"/>
-<element name="C9" library="mb_caps-box" package="072X025" value="22nF" x="15.24" y="27.94" rot="R270"/>
-<element name="D1" library="mb_diodes" package="DO35-3" value="1N914" x="33.655" y="26.035" rot="R90"/>
-<element name="D2" library="mb_diodes" package="DO35-3" value="1N914" x="36.83" y="26.035" rot="R270"/>
-<element name="D3" library="mb_diodes" package="DO41-3" value="1N4002" x="36.83" y="36.195" rot="R270"/>
-<element name="D4" library="mb_diodes" package="LED3MM" value="LED3MM" x="26.035" y="43.18" rot="R180"/>
-<element name="DIST" library="mb_pots" package="16MM" value="A100k" x="23.495" y="29.21" rot="R90"/>
-<element name="FILTER" library="mb_pots" package="16MM" value="A100K" x="41.91" y="10.795" rot="R90"/>
-<element name="IC1" library="mb_ics" package="DIL08" value="LM308N" x="25.4" y="12.065"/>
-<element name="Q1A" library="xc_library" package="TO92-" value="2N5458" x="12.7" y="19.685" rot="R90"/>
-<element name="Q1B" library="xc_library" package="SOT23" value="MMBF5458" x="17.78" y="19.685" rot="R180"/>
-<element name="R1" library="mb_resistors" package="R0207/3" value="2M2" x="3.81" y="8.255" rot="R90"/>
-<element name="R10" library="mb_resistors" package="R0207/3" value="47R" x="11.43" y="8.255" rot="R270"/>
-<element name="R11" library="mb_resistors" package="R0207/3" value="100k" x="17.145" y="38.735" rot="R90"/>
-<element name="R12" library="mb_resistors" package="R0207/3" value="4k7" x="33.655" y="36.195" rot="R90"/>
-<element name="R13" library="mb_resistors" package="R0207/3" value="100k" x="20.32" y="38.735" rot="R270"/>
-<element name="R2" library="mb_resistors" package="R0207/3" value="2M2" x="13.97" y="38.735" rot="R90"/>
-<element name="R3" library="mb_resistors" package="R0207/3" value="1k" x="10.795" y="38.735" rot="R270"/>
-<element name="R4" library="mb_resistors" package="R0207/3" value="47R" x="34.29" y="12.065" rot="R90"/>
-<element name="R5" library="mb_resistors" package="R0207/3" value="560R" x="37.465" y="12.065" rot="R90"/>
-<element name="R6" library="mb_resistors" package="R0207/3" value="1k" x="46.355" y="10.795" rot="R90"/>
-<element name="R7" library="mb_resistors" package="R0207/3" value="1k5" x="35.56" y="19.05"/>
-<element name="R8" library="mb_resistors" package="R0207/3" value="1M" x="7.62" y="8.255" rot="R90"/>
-<element name="R9" library="mb_resistors" package="R0207/3" value="10k" x="40.005" y="26.035" rot="R90"/>
-<element name="VOL" library="mb_pots" package="16MM" value="A100k" x="28.575" y="29.21" rot="R270"/>
+<element name="C1" library="mb_caps-box" package="072X025" value="22nF" x="7.62" y="27.94" smashed="yes" rot="R90">
+<attribute name="VALUE" x="7.985" y="26.728" size="0.8128" layer="27" ratio="12" rot="R90"/>
+</element>
+<element name="C10" library="mb_caps-electro" package="050_020_1" value="1uF" x="41.275" y="34.29" smashed="yes" rot="R90">
+<attribute name="VALUE" x="43.307" y="33.528" size="0.8128" layer="27" ratio="12" rot="R90"/>
+</element>
+<element name="C11" library="mb_caps-electro" package="080_035_1" value="100uF" x="5.715" y="18.415" smashed="yes" rot="R180">
+<attribute name="VALUE" x="7.642" y="21.982" size="1.27" layer="27" ratio="12" rot="R180"/>
+</element>
+<element name="C12" library="mb_caps-box" package="072X025" value="100nF" x="3.81" y="27.94" smashed="yes" rot="R90">
+<attribute name="VALUE" x="3.413" y="26.474" size="0.8128" layer="27" ratio="12" rot="R90"/>
+</element>
+<element name="C13" library="mb_caps-electro" package="050_020_1" value="1uF" x="6.35" y="34.925" smashed="yes" rot="R180">
+<attribute name="VALUE" x="7.62" y="38.735" size="1.27" layer="27" ratio="12" rot="R180"/>
+</element>
+<element name="C2" library="mb_caps-box" package="072X025" value="1nF" x="19.05" y="27.94" smashed="yes" rot="R90">
+<attribute name="VALUE" x="19.542" y="26.728" size="1.016" layer="27" ratio="12" rot="R90"/>
+</element>
+<element name="C3" library="mb_caps-ceramic" package="050X030_025" value="30pF" x="15.24" y="12.7" smashed="yes" rot="R270">
+<attribute name="VALUE" x="12.3698" y="14.1116" size="1.27" layer="27" ratio="12" rot="R270"/>
+</element>
+<element name="C4" library="mb_caps-ceramic" package="050X030_025" value="100pF" x="25.4" y="19.685" smashed="yes">
+<attribute name="NAME" x="24.3078" y="21.3868" size="1.27" layer="25" ratio="12"/>
+<attribute name="VALUE" x="23.9884" y="16.8148" size="1.27" layer="27" ratio="12"/>
+</element>
+<element name="C5" library="mb_caps-electro" package="050_020_1" value="2.2uF" x="46.99" y="26.67" smashed="yes" rot="R270">
+<attribute name="VALUE" x="45.085" y="28.067" size="0.8128" layer="27" ratio="12" rot="R270"/>
+</element>
+<element name="C6" library="mb_caps-electro" package="050_020_1" value="4.7uF" x="46.99" y="19.685" smashed="yes" rot="R90">
+<attribute name="VALUE" x="49.022" y="18.415" size="0.8128" layer="27" ratio="12" rot="R90"/>
+</element>
+<element name="C7" library="mb_caps-electro" package="050_020_1" value="4.7uF" x="46.99" y="34.29" smashed="yes" rot="R270">
+<attribute name="VALUE" x="45.085" y="35.56" size="0.8128" layer="27" ratio="12" rot="R270"/>
+</element>
+<element name="C8" library="mb_caps-box" package="072X025" value="3n3" x="11.43" y="27.94" smashed="yes" rot="R270">
+<attribute name="VALUE" x="10.811" y="29.406" size="1.27" layer="27" ratio="12" rot="R270"/>
+</element>
+<element name="C9" library="mb_caps-box" package="072X025" value="22nF" x="15.24" y="27.94" smashed="yes" rot="R270">
+<attribute name="VALUE" x="14.859" y="29.21" size="0.8128" layer="27" ratio="12" rot="R270"/>
+</element>
+<element name="D1" library="mb_diodes" package="DO35-3" value="1N914" x="33.655" y="26.035" smashed="yes" rot="R90">
+<attribute name="VALUE" x="34.163" y="24.765" size="0.8128" layer="27" ratio="12" rot="R90"/>
+</element>
+<element name="D2" library="mb_diodes" package="DO35-3" value="1N914" x="36.83" y="26.035" smashed="yes" rot="R270">
+<attribute name="VALUE" x="36.449" y="27.305" size="0.8128" layer="27" ratio="12" rot="R270"/>
+</element>
+<element name="D3" library="mb_diodes" package="DO41-3" value="4002" x="36.83" y="36.195" smashed="yes" rot="R270">
+<attribute name="VALUE" x="36.449" y="37.084" size="0.8128" layer="27" ratio="12" rot="R270"/>
+</element>
+<element name="D4" library="mb_diodes" package="LED3MM" value="LED3MM" x="26.035" y="43.18" smashed="yes" rot="R180"/>
+<element name="DIST" library="mb_pots" package="16MM" value="A100k" x="23.495" y="29.21" smashed="yes" rot="R90">
+<attribute name="NAME" x="21.59" y="22.352" size="1.27" layer="21" ratio="12" rot="R90"/>
+<attribute name="VALUE" x="21.59" y="26.67" size="1.27" layer="27" ratio="12" rot="R90"/>
+</element>
+<element name="FILTER" library="mb_pots" package="16MM" value="A100K" x="41.91" y="10.795" smashed="yes" rot="R90">
+<attribute name="NAME" x="45.085" y="7.62" size="1.27" layer="21" ratio="12" rot="R90"/>
+<attribute name="VALUE" x="38.735" y="6.985" size="1.27" layer="27" ratio="12" rot="R90"/>
+</element>
+<element name="IC1" library="mb_ics" package="DIL08" value="LM308N" x="25.4" y="12.065" smashed="yes">
+<attribute name="VALUE" x="23.114" y="10.16" size="1.27" layer="27" font="vector" ratio="12"/>
+</element>
+<element name="Q1A" library="xc_library" package="TO92-" value="2N5458" x="12.7" y="19.685" smashed="yes" rot="R90">
+<attribute name="VALUE" x="15.875" y="17.526" size="1.27" layer="27" ratio="12" rot="R90"/>
+</element>
+<element name="Q1B" library="xc_library" package="SOT23" value="MMBF5458" x="17.78" y="19.685" smashed="yes" rot="R180">
+<attribute name="VALUE" x="19.685" y="22.86" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R1" library="mb_resistors" package="R0207/3" value="2M2" x="3.81" y="8.255" smashed="yes" rot="R90">
+<attribute name="VALUE" x="6.35" y="6.985" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+</element>
+<element name="R10" library="mb_resistors" package="R0207/3" value="47R" x="11.43" y="8.255" smashed="yes" rot="R270">
+<attribute name="VALUE" x="8.89" y="9.525" size="1.27" layer="27" font="vector" ratio="12" rot="R270"/>
+</element>
+<element name="R11" library="mb_resistors" package="R0207/3" value="100k" x="17.145" y="38.735" smashed="yes" rot="R90">
+<attribute name="VALUE" x="17.78" y="36.83" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+</element>
+<element name="R12" library="mb_resistors" package="R0207/3" value="4k7" x="33.655" y="36.195" smashed="yes" rot="R90">
+<attribute name="VALUE" x="34.29" y="35.052" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+</element>
+<element name="R13" library="mb_resistors" package="R0207/3" value="100k" x="20.32" y="38.735" smashed="yes" rot="R270">
+<attribute name="VALUE" x="19.812" y="40.64" size="1.27" layer="27" font="vector" ratio="12" rot="R270"/>
+</element>
+<element name="R2" library="mb_resistors" package="R0207/3" value="2M2" x="13.97" y="38.735" smashed="yes" rot="R90">
+<attribute name="VALUE" x="14.605" y="37.338" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+</element>
+<element name="R3" library="mb_resistors" package="R0207/3" value="1k" x="10.795" y="38.735" smashed="yes" rot="R270">
+<attribute name="VALUE" x="10.16" y="39.624" size="1.27" layer="27" font="vector" ratio="12" rot="R270"/>
+</element>
+<element name="R4" library="mb_resistors" package="R0207/3" value="47R" x="34.29" y="12.065" smashed="yes" rot="R90">
+<attribute name="VALUE" x="36.83" y="10.795" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+</element>
+<element name="R5" library="mb_resistors" package="R0207/3" value="560R" x="37.465" y="12.065" smashed="yes" rot="R90">
+<attribute name="VALUE" x="40.005" y="10.795" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+</element>
+<element name="R6" library="mb_resistors" package="R0207/3" value="1k" x="46.355" y="10.795" smashed="yes" rot="R90">
+<attribute name="VALUE" x="48.895" y="9.525" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+</element>
+<element name="R7" library="mb_resistors" package="R0207/3" value="1k5" x="35.56" y="19.05" smashed="yes">
+<attribute name="VALUE" x="34.29" y="16.51" size="1.27" layer="27" font="vector" ratio="12"/>
+</element>
+<element name="R8" library="mb_resistors" package="R0207/3" value="1M" x="7.62" y="8.255" smashed="yes" rot="R90">
+<attribute name="VALUE" x="10.16" y="6.985" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+</element>
+<element name="R9" library="mb_resistors" package="R0207/3" value="10k" x="40.005" y="26.035" smashed="yes" rot="R90">
+<attribute name="VALUE" x="40.64" y="24.765" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
+</element>
+<element name="VOL" library="mb_pots" package="16MM" value="A100k" x="28.575" y="29.21" smashed="yes" rot="R270">
+<attribute name="NAME" x="30.607" y="27.559" size="1.27" layer="21" ratio="12" rot="R270"/>
+<attribute name="VALUE" x="30.607" y="32.893" size="1.27" layer="27" ratio="12" rot="R270"/>
+</element>
 <element name="U$1" library="xc_library" package="BOARDLINK" value="BOARDLINK" x="24.13" y="3.175" smashed="yes"/>
 </elements>
 <signals>
@@ -701,9 +775,16 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="10.795" y1="42.545" x2="10.795" y2="41.91" width="0.4064" layer="1"/>
 <wire x1="10.795" y1="41.91" x2="12.065" y2="40.64" width="0.4064" layer="1"/>
 <wire x1="12.065" y1="40.64" x2="17.145" y2="40.64" width="0.4064" layer="1"/>
-<wire x1="17.145" y1="40.64" x2="18.669" y2="39.116" width="0.4064" layer="1"/>
-<wire x1="19.05" y1="25.4" x2="18.669" y2="39.116" width="0" layer="19" extent="1-1"/>
-<wire x1="26.67" y1="8.255" x2="19.05" y2="25.4" width="0" layer="19" extent="1-1"/>
+<wire x1="18.669" y1="39.116" x2="17.145" y2="40.64" width="0.4064" layer="1"/>
+<wire x1="19.05" y1="25.4" x2="17.145" y2="27.305" width="0.4064" layer="1"/>
+<wire x1="17.145" y1="27.305" x2="17.145" y2="31.75" width="0.4064" layer="1"/>
+<wire x1="17.145" y1="31.75" x2="18.669" y2="33.274" width="0.4064" layer="1"/>
+<wire x1="18.669" y1="33.274" x2="18.669" y2="39.116" width="0.4064" layer="1"/>
+<wire x1="19.05" y1="25.4" x2="19.939" y2="24.511" width="0.4064" layer="16"/>
+<wire x1="19.939" y1="11.176" x2="20.955" y2="10.16" width="0.4064" layer="16"/>
+<wire x1="24.765" y1="10.16" x2="26.67" y2="8.255" width="0.4064" layer="16"/>
+<wire x1="19.939" y1="24.511" x2="19.939" y2="11.176" width="0.4064" layer="16"/>
+<wire x1="20.955" y1="10.16" x2="24.765" y2="10.16" width="0.4064" layer="16"/>
 </signal>
 <signal name="+9V">
 <contactref element="IC1" pad="7"/>
@@ -762,9 +843,15 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="23.495" y1="29.21" x2="23.495" y2="24.13" width="0.4064" layer="1"/>
 <wire x1="37.465" y1="8.255" x2="34.29" y2="8.255" width="0.4064" layer="1"/>
 <wire x1="34.29" y1="8.255" x2="32.385" y2="10.16" width="0.4064" layer="1"/>
-<wire x1="32.385" y1="10.16" x2="26.035" y2="10.16" width="0.4064" layer="1"/>
+<wire x1="32.385" y1="10.16" x2="31.877" y2="10.16" width="0.4064" layer="1"/>
+<wire x1="31.877" y1="10.16" x2="26.035" y2="10.16" width="0.4064" layer="1"/>
 <wire x1="26.035" y1="10.16" x2="24.13" y2="8.255" width="0.4064" layer="1"/>
-<wire x1="26.035" y1="10.16" x2="24.13" y2="19.685" width="0" layer="19" extent="1-1"/>
+<wire x1="24.13" y1="19.685" x2="26.035" y2="21.59" width="0.4064" layer="1"/>
+<wire x1="28.702" y1="21.59" x2="29.464" y2="20.828" width="0.4064" layer="1"/>
+<wire x1="29.464" y1="20.828" x2="29.464" y2="18.161" width="0.4064" layer="1"/>
+<wire x1="31.877" y1="15.748" x2="31.877" y2="10.16" width="0.4064" layer="1"/>
+<wire x1="26.035" y1="21.59" x2="28.702" y2="21.59" width="0.4064" layer="1"/>
+<wire x1="29.464" y1="18.161" x2="31.877" y2="15.748" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$8">
 <contactref element="IC1" pad="8"/>
@@ -837,10 +924,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="7.62" y1="12.065" x2="9.525" y2="13.97" width="0.4064" layer="16"/>
 <wire x1="9.525" y1="19.05" x2="12.7" y2="22.225" width="0.4064" layer="16"/>
 <wire x1="9.525" y1="13.97" x2="9.525" y2="19.05" width="0.4064" layer="16"/>
-<wire x1="12.7" y1="22.225" x2="17.29" y2="22.225" width="0.4064" layer="1"/>
-<wire x1="15.24" y1="25.4" x2="17.29" y2="23.35" width="0.4064" layer="1"/>
-<wire x1="17.29" y1="23.35" x2="17.29" y2="22.225" width="0.4064" layer="1"/>
-<wire x1="17.29" y1="22.225" x2="18.73" y2="20.785" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="22.225" x2="15.24" y2="24.765" width="0.4064" layer="1"/>
+<wire x1="15.24" y1="24.765" x2="15.24" y2="25.4" width="0.4064" layer="1"/>
+<wire x1="18.73" y1="20.785" x2="17.29" y2="22.225" width="0.4064" layer="1"/>
+<wire x1="17.29" y1="22.225" x2="12.7" y2="22.225" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$15">
 <contactref element="Q1A" pad="2"/>
@@ -906,14 +993,14 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="39.37" y1="7.62" x2="39.37" y2="9.525" width="0.4064" layer="1"/>
 <wire x1="39.37" y1="9.525" x2="38.735" y2="10.16" width="0.4064" layer="1"/>
 <wire x1="38.735" y1="10.16" x2="33.655" y2="10.16" width="0.4064" layer="1"/>
-<wire x1="31.623" y1="16.764" x2="30.226" y2="18.161" width="0.4064" layer="1"/>
-<wire x1="30.226" y1="18.161" x2="30.226" y2="22.606" width="0.4064" layer="1"/>
+<wire x1="32.639" y1="16.002" x2="30.226" y2="18.415" width="0.4064" layer="1"/>
+<wire x1="30.226" y1="18.415" x2="30.226" y2="22.606" width="0.4064" layer="1"/>
 <wire x1="30.226" y1="22.606" x2="30.734" y2="23.114" width="0.4064" layer="1"/>
 <wire x1="30.734" y1="23.114" x2="30.734" y2="27.051" width="0.4064" layer="1"/>
 <wire x1="30.734" y1="27.051" x2="28.575" y2="29.21" width="0.4064" layer="1"/>
 <wire x1="34.925" y1="6.35" x2="38.1" y2="6.35" width="0.4064" layer="1"/>
-<wire x1="33.655" y1="10.16" x2="31.623" y2="12.192" width="0.4064" layer="1"/>
-<wire x1="31.623" y1="12.192" x2="31.623" y2="16.764" width="0.4064" layer="1"/>
+<wire x1="33.655" y1="10.16" x2="32.639" y2="11.176" width="0.4064" layer="1"/>
+<wire x1="32.639" y1="11.176" x2="32.639" y2="16.002" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$17">
 <contactref element="U$1" pad="2"/>

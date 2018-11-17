@@ -2330,10 +2330,7 @@ grid 2.54 mm</description>
 </class>
 </classes>
 <parts>
-<part name="GND1" library="mb_supply" deviceset="GND(T)" device=""/>
-<part name="GND2" library="mb_supply" deviceset="GND(T)" device=""/>
 <part name="GND3" library="mb_supply" deviceset="GND(T)" device=""/>
-<part name="GND4" library="mb_supply" deviceset="GND(T)" device=""/>
 <part name="VB1" library="mb_supply" deviceset="VB" device=""/>
 <part name="VB2" library="mb_supply" deviceset="VB" device=""/>
 <part name="DIST" library="mb_pots" deviceset="POT" device="16MM_PCB_PADS" value="A100k"/>
@@ -2369,7 +2366,6 @@ grid 2.54 mm</description>
 <part name="C9" library="mb_caps-box" deviceset="072X025" device="2" value="22nF"/>
 <part name="Q1A" library="xc_library" deviceset="2N5458" device=""/>
 <part name="Q1B" library="xc_library" deviceset="MMBF5458" device="" value="MMBF5458"/>
-<part name="GND10" library="mb_supply" deviceset="GND(T)" device=""/>
 <part name="V2" library="mb_supply" deviceset="+9V" device=""/>
 <part name="R12" library="mb_resistors" deviceset="6MM" device=".3" value="4k7"/>
 <part name="D4" library="mb_diodes" deviceset="LED" device="3MM"/>
@@ -2389,6 +2385,10 @@ grid 2.54 mm</description>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device=""/>
 <part name="U$1" library="xc_library" deviceset="BOARDLINK" device=""/>
 <part name="V4" library="mb_supply" deviceset="+9V" device=""/>
+<part name="GND1" library="mb_supply" deviceset="GND" device=""/>
+<part name="GND2" library="mb_supply" deviceset="GND" device=""/>
+<part name="GND4" library="mb_supply" deviceset="GND" device=""/>
+<part name="GND10" library="mb_supply" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2396,10 +2396,7 @@ grid 2.54 mm</description>
 <text x="263.144" y="6.604" size="3.81" layer="94">1.0</text>
 </plain>
 <instances>
-<instance part="GND1" gate="GND" x="53.34" y="76.2"/>
-<instance part="GND2" gate="GND" x="149.86" y="76.2"/>
 <instance part="GND3" gate="GND" x="101.6" y="116.84" rot="R180"/>
-<instance part="GND4" gate="GND" x="198.12" y="76.2"/>
 <instance part="VB1" gate="G$1" x="71.12" y="116.84"/>
 <instance part="VB2" gate="G$1" x="180.34" y="147.32"/>
 <instance part="DIST" gate="G$1" x="101.6" y="142.24" rot="R90"/>
@@ -2438,7 +2435,6 @@ grid 2.54 mm</description>
 <instance part="C9" gate="G$1" x="195.58" y="99.06" rot="R90"/>
 <instance part="Q1A" gate="G$1" x="208.28" y="101.6"/>
 <instance part="Q1B" gate="G$1" x="218.44" y="101.6"/>
-<instance part="GND10" gate="GND" x="220.98" y="76.2"/>
 <instance part="V2" gate="+9V" x="220.98" y="114.3"/>
 <instance part="R12" gate="G$1" x="137.16" y="132.08" rot="R270"/>
 <instance part="D4" gate="G$1" x="137.16" y="119.38" rot="R90"/>
@@ -2459,16 +2455,15 @@ grid 2.54 mm</description>
 <instance part="FRAME1" gate="G$2" x="172.72" y="0"/>
 <instance part="U$1" gate="G$1" x="210.82" y="139.7" rot="R270"/>
 <instance part="V4" gate="+9V" x="132.08" y="139.7" rot="R90"/>
+<instance part="GND1" gate="GND" x="53.34" y="76.2"/>
+<instance part="GND2" gate="GND" x="149.86" y="76.2"/>
+<instance part="GND4" gate="GND" x="198.12" y="76.2"/>
+<instance part="GND10" gate="GND" x="220.98" y="76.2"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="GND" class="0">
-<segment>
-<pinref part="GND1" gate="GND" pin="GND"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="53.34" y1="78.74" x2="53.34" y2="83.82" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="GND6" gate="GND" pin="GND"/>
 <pinref part="C6" gate="1" pin="-"/>
@@ -2490,24 +2485,9 @@ grid 2.54 mm</description>
 <wire x1="91.44" y1="86.36" x2="91.44" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="D1" gate="G$1" pin="A"/>
-<pinref part="GND2" gate="GND" pin="GND"/>
-<wire x1="149.86" y1="86.36" x2="149.86" y2="78.74" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="D2" gate="G$1" pin="C"/>
 <pinref part="GND8" gate="GND" pin="GND"/>
 <wire x1="154.94" y1="86.36" x2="154.94" y2="78.74" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R8" gate="G$1" pin="1"/>
-<pinref part="GND4" gate="GND" pin="GND"/>
-<wire x1="198.12" y1="83.82" x2="198.12" y2="78.74" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R9" gate="G$1" pin="1"/>
-<pinref part="GND10" gate="GND" pin="GND"/>
-<wire x1="220.98" y1="83.82" x2="220.98" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND7" gate="GND" pin="GND"/>
@@ -2544,6 +2524,31 @@ grid 2.54 mm</description>
 <wire x1="180.34" y1="116.84" x2="180.34" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="GND15" gate="GND" pin="GND"/>
 <wire x1="180.34" y1="114.3" x2="180.34" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="G"/>
+<wire x1="206.756" y1="132.08" x2="185.42" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="185.42" y1="132.08" x2="185.42" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="185.42" y1="111.76" x2="180.34" y2="111.76" width="0.1524" layer="91"/>
+<junction x="180.34" y="111.76"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="53.34" y1="78.74" x2="53.34" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="GND1" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="149.86" y1="86.36" x2="149.86" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="198.12" y1="83.82" x2="198.12" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="GND4" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="220.98" y1="83.82" x2="220.98" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="GND10" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="N$1" class="0">
