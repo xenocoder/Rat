@@ -2305,9 +2305,9 @@ grid 2.54 mm</description>
 <parts>
 <part name="VB1" library="mb_supply" deviceset="VB" device=""/>
 <part name="VB2" library="mb_supply" deviceset="VB" device=""/>
-<part name="DIST" library="mb_pots" deviceset="POT" device="16MM_PCB_PADS" value="A100k"/>
-<part name="FILTER" library="mb_pots" deviceset="POT" device="16MM_PCB_PADS" value="A100K"/>
-<part name="VOL" library="mb_pots" deviceset="POT" device="16MM_PCB_PADS" value="A100k"/>
+<part name="DIST" library="mb_pots" deviceset="POT" device="16MM" value="A100k"/>
+<part name="FILTER" library="mb_pots" deviceset="POT" device="16MM" value="A100K"/>
+<part name="VOL" library="mb_pots" deviceset="POT" device="16MM" value="A100k"/>
 <part name="R1" library="mb_resistors" deviceset="6MM" device=".3" value="2M2"/>
 <part name="R2" library="mb_resistors" deviceset="6MM" device=".3" value="2M2"/>
 <part name="R3" library="mb_resistors" deviceset="6MM" device=".3" value="1k"/>

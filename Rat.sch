@@ -2370,7 +2370,7 @@ grid 2.54 mm</description>
 <sheets>
 <sheet>
 <plain>
-<text x="263.144" y="6.604" size="3.81" layer="94">1.0</text>
+<text x="263.144" y="6.604" size="3.81" layer="94">1.1</text>
 </plain>
 <instances>
 <instance part="VB1" gate="G$1" x="71.12" y="116.84" smashed="yes">
