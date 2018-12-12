@@ -84,6 +84,36 @@
 &lt;li&gt;these are used on a schematic for placeholders and on a board for pads for off-board components like jacks.
 &lt;/ul&gt;</description>
 <packages>
+<package name="SQUARE">
+<description>&lt;b&gt;Square Pad&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;drill diameter 1 mm&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="1" x="0" y="0" drill="1" diameter="2" shape="square"/>
+<text x="1.27" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+</package>
+<package name="OCTOGON">
+<description>&lt;b&gt;Octogonal Pad&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;drill diameter 1 mm&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="1" x="0" y="0" drill="1" diameter="2" shape="octagon"/>
+<text x="1.27" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+</package>
+<package name="ROUND">
+<description>&lt;b&gt;Round Pad&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;drill diameter 0.7 mm&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="1" x="0" y="0" drill="1" diameter="2"/>
+<text x="1.27" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+</package>
+<package name="LONG">
+<description>&lt;b&gt;Long Pad&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;drill diameter 1 mm&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="1" x="0" y="0" drill="1" diameter="2" shape="long"/>
+<text x="1.905" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+</package>
+<package name="OFFSET">
+<description>&lt;b&gt;Long Offset Pad&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;drill diameter 0.7 mm&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="1" x="0" y="0" drill="1" diameter="2" shape="offset"/>
+<text x="2.54" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="+09V-1">
@@ -106,6 +136,14 @@
 <circle x="0" y="1.27" radius="1.27" width="0.254" layer="94"/>
 <text x="-2.54" y="3.81" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="VB" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
+<symbol name="PAD">
+<wire x1="0" y1="1.27" x2="2.54" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="1.27" x2="0" y2="-1.27" width="0.254" layer="94"/>
+<circle x="1.27" y="0" radius="1.27" width="0.254" layer="94"/>
+<circle x="1.27" y="0" radius="1.016" width="0.254" layer="94"/>
+<text x="0" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<pin name="PAD" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -155,6 +193,58 @@
 </gates>
 <devices>
 <device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PAD" prefix="PAD" uservalue="yes">
+<description>&lt;b&gt;PAD&lt;/b&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;use this package for pads with any purpose, including input, output, send or return&lt;/li&gt;
+&lt;li&gt;various pad shapes:  round, square, octogonal, long, and long offset&lt;/li&gt;
+&lt;/ul&gt;</description>
+<gates>
+<gate name="G$1" symbol="PAD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SQUARE">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="8" package="OCTOGON">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="O" package="ROUND">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="L" package="LONG">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="OFF" package="OFFSET">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -2331,8 +2421,8 @@ grid 2.54 mm</description>
 <part name="GND9" library="mb_supply" deviceset="GND" device=""/>
 <part name="C2" library="mb_caps-box" deviceset="072X025" device="2" value="1nF"/>
 <part name="IC1" library="mb_ics" deviceset="LM308" device="N"/>
-<part name="D1" library="mb_diodes" deviceset="1N914" device=".3" value="1N914"/>
-<part name="D2" library="mb_diodes" deviceset="1N914" device=".3" value="1N914"/>
+<part name="D1" library="mb_diodes" deviceset="1N914" device=".3" value="CLIP-D1"/>
+<part name="D2" library="mb_diodes" deviceset="1N914" device=".3" value="CLIP-D2"/>
 <part name="D3" library="mb_diodes" deviceset="1N400X" device=".3" value="4002"/>
 <part name="C4" library="mb_caps-ceramic" deviceset="050X030_025" device="1" value="100pF"/>
 <part name="C5" library="mb_caps-electro" deviceset="050" device="1" value="2.2uF"/>
@@ -2366,6 +2456,8 @@ grid 2.54 mm</description>
 <part name="GND4" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND10" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND3" library="mb_supply" deviceset="GND" device=""/>
+<part name="SW-IN" library="mb_supply" deviceset="PAD" device=""/>
+<part name="SW-OUT" library="mb_supply" deviceset="PAD" device="O"/>
 </parts>
 <sheets>
 <sheet>
@@ -2411,9 +2503,9 @@ grid 2.54 mm</description>
 <attribute name="NAME" x="82.931" y="130.5814" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="83.82" y="135.382" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R6" gate="G$1" x="142.24" y="99.06" smashed="yes" rot="R180">
-<attribute name="NAME" x="143.891" y="97.5614" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="144.78" y="102.362" size="1.778" layer="96" rot="R180"/>
+<instance part="R6" gate="G$1" x="139.7" y="99.06" smashed="yes" rot="R180">
+<attribute name="NAME" x="141.351" y="97.5614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="142.24" y="102.362" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="R7" gate="G$1" x="180.34" y="99.06" smashed="yes" rot="R180">
 <attribute name="NAME" x="181.991" y="97.5614" size="1.778" layer="95" rot="R180"/>
@@ -2445,8 +2537,8 @@ grid 2.54 mm</description>
 <instance part="GND7" gate="GND" x="233.68" y="76.2" smashed="yes">
 <attribute name="VALUE" x="231.775" y="73.025" size="1.778" layer="96"/>
 </instance>
-<instance part="GND8" gate="GND" x="154.94" y="76.2" smashed="yes">
-<attribute name="VALUE" x="153.035" y="73.025" size="1.778" layer="96"/>
+<instance part="GND8" gate="GND" x="152.4" y="76.2" smashed="yes">
+<attribute name="VALUE" x="150.495" y="73.025" size="1.778" layer="96"/>
 </instance>
 <instance part="GND9" gate="GND" x="91.44" y="76.2" smashed="yes">
 <attribute name="VALUE" x="89.535" y="73.025" size="1.778" layer="96"/>
@@ -2459,13 +2551,13 @@ grid 2.54 mm</description>
 <attribute name="NAME" x="106.68" y="95.885" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="106.68" y="106.68" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="D1" gate="G$1" x="149.86" y="91.44" smashed="yes" rot="R90">
-<attribute name="NAME" x="147.8534" y="87.884" size="1.778" layer="95" font="vector" rot="R90"/>
-<attribute name="VALUE" x="153.4414" y="87.122" size="1.778" layer="96" font="vector" rot="R90"/>
+<instance part="D1" gate="G$1" x="147.32" y="91.44" smashed="yes" rot="R90">
+<attribute name="NAME" x="145.8214" y="92.71" size="1.778" layer="95" font="vector" rot="R90"/>
+<attribute name="VALUE" x="145.5674" y="79.502" size="1.778" layer="96" font="vector" rot="R90"/>
 </instance>
-<instance part="D2" gate="G$1" x="154.94" y="88.9" smashed="yes" rot="R270">
-<attribute name="NAME" x="156.9466" y="92.456" size="1.778" layer="95" font="vector" rot="R270"/>
-<attribute name="VALUE" x="151.3586" y="93.218" size="1.778" layer="96" font="vector" rot="R270"/>
+<instance part="D2" gate="G$1" x="152.4" y="88.9" smashed="yes" rot="R270">
+<attribute name="NAME" x="150.0886" y="95.25" size="1.778" layer="95" font="vector" rot="R270"/>
+<attribute name="VALUE" x="149.8346" y="86.868" size="1.778" layer="96" font="vector" rot="R270"/>
 </instance>
 <instance part="D3" gate="1" x="152.4" y="134.62" smashed="yes" rot="R90">
 <attribute name="NAME" x="150.3934" y="131.064" size="1.778" layer="95" font="vector" rot="R90"/>
@@ -2574,8 +2666,8 @@ grid 2.54 mm</description>
 <instance part="GND1" gate="GND" x="53.34" y="76.2" smashed="yes">
 <attribute name="VALUE" x="51.435" y="73.025" size="1.778" layer="96"/>
 </instance>
-<instance part="GND2" gate="GND" x="149.86" y="76.2" smashed="yes">
-<attribute name="VALUE" x="147.955" y="73.025" size="1.778" layer="96"/>
+<instance part="GND2" gate="GND" x="147.32" y="76.2" smashed="yes">
+<attribute name="VALUE" x="142.875" y="73.025" size="1.778" layer="96"/>
 </instance>
 <instance part="GND4" gate="GND" x="198.12" y="76.2" smashed="yes">
 <attribute name="VALUE" x="196.215" y="73.025" size="1.778" layer="96"/>
@@ -2585,6 +2677,12 @@ grid 2.54 mm</description>
 </instance>
 <instance part="GND3" gate="GND" x="101.6" y="116.84" smashed="yes" rot="R180">
 <attribute name="VALUE" x="103.505" y="120.015" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="SW-IN" gate="G$1" x="154.94" y="83.82" smashed="yes" rot="R270">
+<attribute name="NAME" x="155.956" y="91.694" size="1.778" layer="95" rot="R270"/>
+</instance>
+<instance part="SW-OUT" gate="G$1" x="160.02" y="83.82" smashed="yes" rot="R270">
+<attribute name="NAME" x="162.56" y="88.9" size="1.778" layer="95" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -2609,7 +2707,13 @@ grid 2.54 mm</description>
 <segment>
 <pinref part="D2" gate="G$1" pin="C"/>
 <pinref part="GND8" gate="GND" pin="GND"/>
-<wire x1="154.94" y1="86.36" x2="154.94" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="86.36" x2="152.4" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="SW-OUT" gate="G$1" pin="PAD"/>
+<wire x1="160.02" y1="86.36" x2="160.02" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="91.44" x2="165.1" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="91.44" x2="165.1" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="78.74" x2="152.4" y2="78.74" width="0.1524" layer="91"/>
+<junction x="152.4" y="78.74"/>
 </segment>
 <segment>
 <pinref part="GND7" gate="GND" pin="GND"/>
@@ -2659,7 +2763,7 @@ grid 2.54 mm</description>
 </segment>
 <segment>
 <pinref part="D1" gate="G$1" pin="A"/>
-<wire x1="149.86" y1="86.36" x2="149.86" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="86.36" x2="147.32" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="GND" pin="GND"/>
 </segment>
 <segment>
@@ -2814,26 +2918,30 @@ grid 2.54 mm</description>
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="C7" gate="1" pin="-"/>
-<wire x1="137.16" y1="99.06" x2="132.08" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="99.06" x2="132.08" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
 <pinref part="D1" gate="G$1" pin="C"/>
 <pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="149.86" y1="93.98" x2="149.86" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="99.06" x2="147.32" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="93.98" x2="147.32" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="99.06" x2="144.78" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="D2" gate="G$1" pin="A"/>
-<wire x1="154.94" y1="93.98" x2="154.94" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="99.06" x2="149.86" y2="99.06" width="0.1524" layer="91"/>
-<junction x="149.86" y="99.06"/>
+<wire x1="152.4" y1="93.98" x2="152.4" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="99.06" x2="147.32" y2="99.06" width="0.1524" layer="91"/>
+<junction x="147.32" y="99.06"/>
 <pinref part="FILTER" gate="G$1" pin="3"/>
 <wire x1="157.48" y1="99.06" x2="154.94" y2="99.06" width="0.1524" layer="91"/>
-<junction x="154.94" y="99.06"/>
+<junction x="152.4" y="99.06"/>
 <pinref part="FILTER" gate="G$1" pin="2"/>
+<wire x1="154.94" y1="99.06" x2="152.4" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="99.06" x2="157.48" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="104.14" x2="165.1" y2="104.14" width="0.1524" layer="91"/>
 <junction x="157.48" y="99.06"/>
+<pinref part="SW-IN" gate="G$1" pin="PAD"/>
+<wire x1="154.94" y1="86.36" x2="154.94" y2="99.06" width="0.1524" layer="91"/>
+<junction x="154.94" y="99.06"/>
 </segment>
 </net>
 <net name="N$12" class="0">
