@@ -444,31 +444,6 @@ spacing: 3 holes
 </package>
 </packages>
 </library>
-<library name="mb_switches">
-<description>&lt;b&gt;Switches&lt;/b&gt;
-&lt;ul&gt;
-&lt;li&gt;SPST, SPDT, DPDT, 3PDT
-&lt;/ul&gt;</description>
-<packages>
-<package name="M9040P">
-<description>&lt;b&gt;TOGGLE SWITCH&lt;/b&gt;&lt;p&gt;
-Marquardt</description>
-<wire x1="-1.905" y1="6.985" x2="1.905" y2="6.985" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="6.985" x2="2.54" y2="6.35" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="6.35" x2="2.54" y2="-6.35" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-6.35" x2="1.905" y2="-6.985" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="-6.985" x2="-1.905" y2="-6.985" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="-6.985" x2="-2.54" y2="-6.35" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-6.35" x2="-2.54" y2="6.35" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="6.35" x2="-1.905" y2="6.985" width="0.1524" layer="21"/>
-<pad name="3" x="0" y="-4.699" drill="2.8" diameter="3.81"/>
-<pad name="2" x="0" y="0" drill="2.8" diameter="3.81"/>
-<pad name="1" x="0" y="4.699" drill="2.8" diameter="3.81"/>
-<text x="-2.54" y="7.62" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-3.81" y="-9.525" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-</package>
-</packages>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -769,10 +744,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </element>
 <element name="SW-OUT" library="mb_supply" package="ROUND" value="" x="43.18" y="29.845" smashed="yes">
 <attribute name="NAME" x="44.45" y="29.591" size="0.8128" layer="25" ratio="12"/>
-</element>
-<element name="SW1" library="mb_switches" package="M9040P" value="" x="37.465" y="42.545" smashed="yes" rot="R90">
-<attribute name="NAME" x="29.845" y="40.005" size="1.27" layer="25" ratio="10" rot="R90"/>
-<attribute name="VALUE" x="46.99" y="38.735" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
 </elements>
 <signals>
